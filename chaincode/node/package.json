@@ -1,6 +1,6 @@
 {
   "name": "fabric-network-boilerplate",
-  "version": "1.34.0",
+  "version": "1.39.0",
   "description": "basic network startup",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
