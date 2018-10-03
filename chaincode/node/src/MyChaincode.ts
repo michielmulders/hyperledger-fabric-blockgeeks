@@ -118,7 +118,7 @@ export class MyChaincode extends Chaincode {
 
         let privateCar = await stubHelper.getStateAsObject(
             verifiedArgs.key, 
-            {privateCollection: 'testCollectoin'}
+            {privateCollection: 'privateCarCollection'}
         );
 
         const car = {
@@ -147,7 +147,7 @@ export class MyChaincode extends Chaincode {
         await stubHelper.putState(
             verifiedArgs.key, 
             car, 
-            {privateCollection: 'testCollectoin'}
+            {privateCollection: 'privateCarCollection'}
         );
     }
 }

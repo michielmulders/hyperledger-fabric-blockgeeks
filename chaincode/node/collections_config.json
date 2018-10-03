@@ -1,6 +1,6 @@
 [
   {
-    "name": "testCollectoin",
+    "name": "privateCarCollection",
     "policy": "OR ('Org1MSP.member','Org2MSP.member')",
     "requiredPeerCount": 0,
     "maxPeerCount": 3,
