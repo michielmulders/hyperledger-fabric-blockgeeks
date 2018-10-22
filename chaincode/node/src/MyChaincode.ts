@@ -66,4 +66,14 @@ export class MyChaincode extends Chaincode {
             this.logger.info('Added <--> ', car);
         }
     }
+
+    async queryAllCars(stubHelper: StubHelper, args: string[]): Promise<any> {
+
+        return await stubHelper.getQueryResultAsList({
+            selector: {
+                docType: 'car'
+            }
+        });
+        
+    }
 }
