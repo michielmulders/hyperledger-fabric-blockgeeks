@@ -34,70 +34,80 @@ describe('Test MyChaincode', () => {
                 model: 'Prius',
                 color: 'blue',
                 owner: 'Tomoko',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR0'
             },
             {
                 make: 'Ford',
                 model: 'Mustang',
                 color: 'red',
                 owner: 'Brad',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR1'
             },
             {
                 make: 'Hyundai',
                 model: 'Tucson',
                 color: 'green',
                 owner: 'Jin Soo',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR2'
             },
             {
                 make: 'Volkswagen',
                 model: 'Passat',
                 color: 'yellow',
                 owner: 'Max',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR3'
             },
             {
                 make: 'Tesla',
                 model: 'S',
                 color: 'black',
                 owner: 'Adriana',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR4'
             },
             {
                 make: 'Peugeot',
                 model: '205',
                 color: 'purple',
                 owner: 'Michel',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR5'
             },
             {
                 make: 'Chery',
                 model: 'S22L',
                 color: 'white',
                 owner: 'Aarav',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR6'
             },
             {
                 make: 'Fiat',
                 model: 'Punto',
                 color: 'violet',
                 owner: 'Pari',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR7'
             },
             {
                 make: 'Tata',
                 model: 'Nano',
                 color: 'indigo',
                 owner: 'Valeria',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR8'
             },
             {
                 make: 'Holden',
                 model: 'Barina',
                 color: 'violet',
                 owner: 'Shotaro',
-                docType: 'car'
+                docType: 'car',
+                key: 'CAR9'
             }
         ])
     });
@@ -115,7 +125,7 @@ describe('Test MyChaincode', () => {
 
         expect(response.status).to.eql(200)
 
-        const response = await stub.mockInvoke("tx1", ['queryCar', JSON.stringify({
+        const response = await stub.mockInvoke("tx2", ['queryCar', JSON.stringify({
             key: `CAR0`
         })]);
 
@@ -141,7 +151,7 @@ describe('Test MyChaincode', () => {
 
         expect(response.status).to.eql(200);
 
-        expect(Transform.bufferToObject(stub.privateCollections["testCollection"]["CAR0"])).to.deep.eq({
+        expect(Transform.bufferToObject(stub.privateCollections["privateCarCollection"]["CAR0"])).to.deep.eq({
             'make': 'prop1',
             'model': 'prop2',
             'color': 'prop3',
